@@ -25,6 +25,7 @@
   },
   "name":"pc wizard",
   "resources":[
+    {"id":{"name":"obj_dummy","path":"objects/obj_dummy/obj_dummy.yy",},},
     {"id":{"name":"obj_spark","path":"objects/obj_spark/obj_spark.yy",},},
     {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},},
     {"id":{"name":"obj_wizard","path":"objects/obj_wizard/obj_wizard.yy",},},
@@ -33,6 +34,7 @@
     {"id":{"name":"spr_spark","path":"sprites/spr_spark/spr_spark.yy",},},
     {"id":{"name":"spr_tile","path":"sprites/spr_tile/spr_tile.yy",},},
     {"id":{"name":"spr_wizard","path":"sprites/spr_wizard/spr_wizard.yy",},},
+    {"id":{"name":"Sprite4","path":"sprites/Sprite4/Sprite4.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
