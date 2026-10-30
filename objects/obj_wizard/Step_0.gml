@@ -29,10 +29,15 @@ if (place_meeting(x, y + vsp, obj_wall)) {
     vsp = 0;
 }
 y += vsp;
-// kouzlo na klávesu Q
-if (keyboard_check_pressed(ord("Q"))) {
-    var spawn_x = x + 16 * facing;                 // kousek před wizardem
-    var spawn_y = (bbox_top + bbox_bottom) / 2;    // střed těla
-    var s = instance_create_layer(spawn_x, spawn_y, "Instances", obj_spark);
-    s.hspeed = 6 * facing;
+for (var i = 0; i < array_length(spells); i++) {
+    var sp = spells[i];
+    if (keyboard_check_pressed(sp.key)) {
+        if (sp.loop && instance_exists(sp.runner)) {
+            instance_destroy(sp.runner);   // druhé stisknutí smyčku zastaví
+            sp.runner = noone;
+        } else {
+            sp.runner = instance_create_layer(x, y, "Instances", obj_spell_runner,
+                { owner: id, blocks: sp.blocks, loop: sp.loop });
+        }
+    }
 }

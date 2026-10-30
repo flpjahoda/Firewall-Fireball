@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"Script1",
+  "%Name":"scr_spells",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Script1",
+  "name":"scr_spells",
   "parent":{
     "name":"scripty",
     "path":"folders/scripty.yy",
