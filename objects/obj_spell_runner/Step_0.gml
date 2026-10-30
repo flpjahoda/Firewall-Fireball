@@ -22,4 +22,19 @@ switch (b.type) {
     case "wait":
         wait_timer = b.frames;
         break;
+		    case "dash":
+        owner.dash_dir = owner.facing;
+        owner.dash_speed = b.speed;
+        owner.dash_timer = b.frames;
+        wait_timer = b.frames;   // další blok čeká, než dash skončí
+        break;
+    case "teleport":
+        var dist = b.distance;
+        with (owner) {
+            repeat (dist) {
+                if (place_meeting(x + facing, y, obj_wall)) break;
+                x += facing;
+            }
+        }
+        break;
 }

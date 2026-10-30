@@ -12,6 +12,13 @@ if (place_meeting(x, y + 1, obj_wall) && keyboard_check_pressed(vk_space)) {
     vsp = jump_speed;
 }
 
+// dash přebije chůzi i gravitaci
+if (dash_timer > 0) {
+    hsp = dash_dir * dash_speed;
+    vsp = 0;
+    dash_timer--;
+}
+
 // kolize vodorovně
 if (place_meeting(x + hsp, y, obj_wall)) {
     while (!place_meeting(x + sign(hsp), y, obj_wall)) {
@@ -29,11 +36,13 @@ if (place_meeting(x, y + vsp, obj_wall)) {
     vsp = 0;
 }
 y += vsp;
+
+// spelly na klávesy
 for (var i = 0; i < array_length(spells); i++) {
     var sp = spells[i];
     if (keyboard_check_pressed(sp.key)) {
         if (sp.loop && instance_exists(sp.runner)) {
-            instance_destroy(sp.runner);   // druhé stisknutí smyčku zastaví
+            instance_destroy(sp.runner);
             sp.runner = noone;
         } else {
             sp.runner = instance_create_layer(x, y, "Instances", obj_spell_runner,
