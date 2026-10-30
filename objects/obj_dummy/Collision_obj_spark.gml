@@ -1,5 +1,20 @@
+var el = other.element;
+with (other) instance_destroy();
+
 hp -= 1;
-image_blend = c_red;   // krátce zčervená po zásahu
-alarm[0] = 5;          // za 5 snímků se vrátí barva
-with (other) instance_destroy();   // jiskra zmizí
-if (hp <= 0) instance_destroy();   // terč zmizí
+flash_timer = 5;
+
+switch (el) {
+    case "water":
+        wet_timer = 300;
+        burn_timer = 0;     // voda hasí
+        break;
+    case "fire":
+        if (wet_timer > 0) {
+            wet_timer = 0;
+            instance_create_layer(x, bbox_top, "Instances", obj_steam);
+        } else {
+            burn_timer = 180;
+        }
+        break;
+}
