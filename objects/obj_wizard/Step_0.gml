@@ -50,3 +50,14 @@ for (var i = 0; i < array_length(spells); i++) {
         }
     }
 }
+if (invuln > 0) invuln--;
+if (shield_timer > 0) shield_timer--;
+
+if (place_meeting(x, y, obj_enemy) && invuln <= 0 && shield_timer <= 0) {
+    hp -= 1;
+    invuln = 60;
+}
+
+image_alpha = (invuln > 0 && (invuln div 4) mod 2 == 0) ? 0.4 : 1;
+
+if (hp <= 0) room_restart();

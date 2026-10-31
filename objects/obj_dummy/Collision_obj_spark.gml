@@ -1,7 +1,8 @@
 var el = other.element;
+var d = other.dmg;
 with (other) instance_destroy();
 
-hp -= 1;
+hp -= d;
 flash_timer = 5;
 
 switch (el) {

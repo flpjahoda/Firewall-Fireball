@@ -7,6 +7,10 @@ facing = 1;          // 1 = doprava, -1 = doleva
 dash_timer = 0;
 dash_dir = 1;
 dash_speed = 0;
+hp = 5;
+invuln = 0;
+shield_timer = 0;
+cast_y_offset = 14;   // výška výstřelu nad nohama
 
 spells = [
     { key: ord("Q"), loop: false, runner: noone,
@@ -22,5 +26,17 @@ spells = [
       blocks: [ block_wait_sec(5), block_dash(8, 10) ] },
 
     { key: ord("T"), loop: false, runner: noone,
-      blocks: [ block_teleport(96) ] }
+      blocks: [ block_teleport(96) ] },
+	
+	{ key: ord("T"), loop: false, runner: noone,
+      blocks: [ block_teleport(96) ] },
+
+    { key: ord("Z"), loop: false, runner: noone,
+      blocks: [ block_element("fire"), block_spray(30) ] },
+
+    { key: ord("X"), loop: false, runner: noone,
+      blocks: [ block_element("water"), block_stronger(), block_shoot(5) ] },
+	
+	{ key: ord("V"), loop: false, runner: noone,
+      blocks: [ block_barrier(120) ] }
 ];

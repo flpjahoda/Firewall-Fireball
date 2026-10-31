@@ -33,3 +33,7 @@ function flatten_blocks(_blocks) {
 function block_dash(_frames, _speed) { return { type: "dash", frames: _frames, speed: _speed }; }
 function block_teleport(_distance)   { return { type: "teleport", distance: _distance }; }
 function block_wait_sec(_seconds)    { return block_wait(_seconds * game_get_speed(gamespeed_fps)); }
+function block_spray(_frames) { return { type: "spray", frames: _frames }; }
+function block_faster()       { return { type: "faster" }; }
+function block_stronger()     { return { type: "stronger" }; }
+function block_barrier(_frames) { return { type: "barrier", frames: _frames }; }
