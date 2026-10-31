@@ -37,9 +37,16 @@ if (place_meeting(x, y + vsp, obj_wall)) {
 }
 y += vsp;
 
+if (editor_cd > 0) editor_cd--;
+
+// otevření editoru
+if (keyboard_check_pressed(vk_tab) && editor_cd <= 0 && !instance_exists(obj_editor)) {
+    instance_create_layer(0, 0, "Instances", obj_editor);
+}
+
 // spelly na klávesy
-for (var i = 0; i < array_length(spells); i++) {
-    var sp = spells[i];
+for (var i = 0; i < array_length(global.spells); i++) {
+    var sp = global.spells[i];
     if (keyboard_check_pressed(sp.key)) {
         if (sp.loop && instance_exists(sp.runner)) {
             instance_destroy(sp.runner);

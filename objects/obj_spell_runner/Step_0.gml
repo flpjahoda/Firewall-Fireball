@@ -17,7 +17,7 @@ if (spray_timer > 0) {
 if (wait_timer > 0) { wait_timer--; exit; }
 
 if (pc >= array_length(blocks)) {
-    if (loop) { pc = 0; } else { instance_destroy(); }
+       if (loop) { pc = 0; wait_timer = 6; } else { instance_destroy(); }
     exit;
 }
 

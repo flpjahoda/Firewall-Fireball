@@ -16,7 +16,9 @@
     {"$GMFolder":"","%Name":"spritey","folderPath":"folders/spritey.yy","name":"spritey","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"zvuky","folderPath":"folders/zvuky.yy","name":"zvuky","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
-  "ForcedPrefabProjectReferences":[],
+  "ForcedPrefabProjectReferences":[
+    {"link":"io.gamemaker.sdfshaders-1.0.0","name":"io.gamemaker.sdfshaders-1.0.0","path":"io.gamemaker.sdfshaders-1.0.0.yyp",},
+  ],
   "IncludedFiles":[],
   "isEcma":false,
   "LibraryEmitters":[],
@@ -27,6 +29,7 @@
   "resources":[
     {"id":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},},
     {"id":{"name":"obj_dummy","path":"objects/obj_dummy/obj_dummy.yy",},},
+    {"id":{"name":"obj_editor","path":"objects/obj_editor/obj_editor.yy",},},
     {"id":{"name":"obj_enemy","path":"objects/obj_enemy/obj_enemy.yy",},},
     {"id":{"name":"obj_spark","path":"objects/obj_spark/obj_spark.yy",},},
     {"id":{"name":"obj_spell_runner","path":"objects/obj_spell_runner/obj_spell_runner.yy",},},
